@@ -1,0 +1,43 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  font-family: Arial;
+}
+
+body {
+  background-color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-size: 5vmin;
+}
+
+.grid {
+  --grid-dimension: 3;
+  --subgrid-size: 25vmin;
+  display: grid;
+  grid-template-columns: repeat(var(--grid-dimension), var(--subgrid-size));
+  grid-template-rows: repeat(var(--grid-dimension), var(--subgrid-size));
+  border: 0.4vmin solid black;
+}
+
+.subgrid {
+  --subgrid-dimension: 3;
+  display: grid;
+  grid-template-columns: repeat(var(--subgrid-dimension), 1fr);
+  grid-template-rows: repeat(var(--subgrid-dimension), 1fr);
+  border: 0.2vmin solid black;
+}
+
+.cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #aaa;
+  border: 0.1vmin solid black;
+}
+
+.cell:focus {
+  background-color: beige;
+}
